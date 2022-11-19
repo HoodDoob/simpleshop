@@ -26,8 +26,8 @@ function Basket(props) {
         {/* <li>SomeProduct x3, 1234,-</li> */}
       </ul>
       <h3>Total:{getTotal()}</h3>
-      <button onClick={() => setShowForm(true)}>Buy Now</button>
-      <CheckoutForm cart={props.cart} />
+      {!showForm && <button onClick={() => setShowForm(true)}>Buy Now</button>}
+      {showForm && <CheckoutForm cart={props.cart} />}
     </section>
   );
 }
